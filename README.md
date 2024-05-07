@@ -24,13 +24,13 @@ To run the server locally in developer mode, open terminal and run:
 
 
 #### Test URL
-http://localhost:8082/ - locally
-http://assignment-dev.us-east-1.elasticbeanstalk.com/ - aws hosted
+http://localhost:8080/ - locally
+http://udacity-assignment-dev.us-east-1.elasticbeanstalk.com/ - aws hosted
 
 
 ## Curl commands
 
 #### Process Kitten Image
 ```
-curl --location 'http://assignment-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg'
+curl --location 'http://udacity-assignment-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg' --output kitten.jpg
 ```
