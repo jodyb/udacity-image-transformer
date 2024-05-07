@@ -38,9 +38,13 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
     if(!pattern.test(image_url)){
       res.status(422).send("Invalid image")
     }
-    filterImageFromURL(image_url).then((path) => {
-      res.status(200).send(path)
-    })
+     // call filterImageFromURL(image_url) to filter the image
+     const filteredImage = await filterImageFromURL(image_url);
+     // send the resulting file in the response
+     res.status(200).sendFile(filteredImage, () => {
+       // deletes any files on the server on finish of the response
+       deleteLocalFiles([filteredImage]);
+     });
   });
 
   // Root Endpoint
